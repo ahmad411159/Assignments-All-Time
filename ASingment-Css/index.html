@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Way of the Samurai</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Merriweather:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f2f2f2;
+        font-family: "Merriweather", serif;
+        color: #555;
+        line-height: 1.9;
+      }
+
+      .page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 50px 20px;
+      }
+
+      .article {
+        width: 760px;
+        background: #fff;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        transition: 0.45s ease;
+      }
+
+      .article:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      }
+
+      .article img {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.8s ease;
+      }
+
+      .article:hover img {
+        transform: scale(1.08);
+      }
+
+      .content {
+        max-width: 560px;
+        margin: 50px auto;
+      }
+
+      .category {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 11px;
+        color: #8b0000;
+        margin-bottom: 20px;
+        transition: 0.3s;
+      }
+
+      .article:hover .category {
+        letter-spacing: 5px;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 42px;
+        color: #222;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        transition: 0.3s;
+      }
+
+      .article:hover h1 {
+        color: #a10000;
+      }
+
+      .meta {
+        text-align: center;
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 45px;
+      }
+
+      p {
+        font-size: 15px;
+        margin-bottom: 28px;
+        text-align: justify;
+        transition: 0.3s;
+      }
+
+      .article:hover p {
+        color: #333;
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #8b0000;
+        font-size: 15px;
+        font-weight: bold;
+        transition: 0.35s;
+      }
+
+      .read-more:hover {
+        color: #000;
+        transform: translateX(10px);
+      }
+
+      @media (max-width: 768px) {
+        .article {
+          width: 100%;
+        }
+
+        .article img {
+          height: 260px;
+        }
+
+        .content {
+          width: 90%;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="article">
+        <img src="Samurai.jpg" alt="Samurai" />
+
+        <div class="content">
+          <div class="category">Japanese History</div>
+
+          <h1>The Way of the Samurai</h1>
+
+          <div class="meta">Posted on March 18, 2025 • Heritage Journal</div>
+
+          <p>
+            The Samurai were the elite warriors of feudal Japan, serving
+            powerful lords with unshakable loyalty and discipline. Their lives
+            revolved around the principles of Bushido, a code that emphasized
+            honor, courage, respect, sincerity, and self-sacrifice. Every action
+            they took reflected their commitment to protecting their people and
+            preserving their reputation.
+          </p>
+
+          <p>
+            From childhood, Samurai underwent years of intense training. They
+            mastered the katana, yumi (longbow), spear, and horseback combat
+            while studying military strategy and philosophy. To a Samurai, skill
+            with a sword was only meaningful when guided by wisdom, patience,
+            and self-control.
+          </p>
+
+          <p>
+            Beyond the battlefield, many Samurai became respected scholars,
+            poets, and artists. They practiced calligraphy, meditation, tea
+            ceremonies, and Zen Buddhism to cultivate inner peace. This balance
+            between strength and serenity made them unique among the world's
+            greatest warrior classes.
+          </p>
+
+          <p>
+            History remembers legendary figures such as Miyamoto Musashi, whose
+            unmatched dueling skills and philosophical writings inspired
+            generations, and the Forty-Seven Ronin, whose loyalty and sacrifice
+            became one of Japan's most famous stories. Their legends continue to
+            symbolize honor that cannot be bought or broken.
+          </p>
+
+          <p>
+            Although the Samurai era ended during the Meiji Restoration in the
+            late nineteenth century, their influence remains deeply woven into
+            Japanese culture. Their ideals of perseverance, discipline,
+            integrity, and respect continue to shape martial arts, leadership,
+            education, and modern life around the world.
+          </p>
+
+          <a href="#" class="read-more"> Explore the Legacy → </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
