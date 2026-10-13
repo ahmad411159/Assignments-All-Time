@@ -1,0 +1,45 @@
+name: Copy assignment repositories
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  copy-assignments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Assignments-All-Time
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Copy assignment repository files into folders
+        shell: bash
+        run: |
+          set -euo pipefail
+          repos=("ASingment-Css" "Css-assignment-2-From" "ASingment-Css-3-Table" "Js-Ass-1" "Js-Ass-2" "Assignment-no-3")
+
+          for repo in "${repos[@]}"; do
+            echo "Copying $repo..."
+            rm -rf "/tmp/source-$repo"
+            git clone --depth 1 "https://github.com/ahmad411159/$repo.git" "/tmp/source-$repo"
+            mkdir -p "$repo"
+            cp -a "/tmp/source-$repo/." "$repo/"
+            rm -rf "$repo/.git"
+          done
+
+      - name: Commit copied files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- ASingment-Css Css-assignment-2-From ASingment-Css-3-Table Js-Ass-1 Js-Ass-2 Assignment-no-3
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+            exit 0
+          fi
+          git commit -m "Copy assignment repositories into Assignments-All-Time"
+          git push origin HEAD:main
